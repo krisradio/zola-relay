@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block highlights %} 
+<div id="highlights">
+    {% for p in section.subsections -%}
+        {% set sub = get_section(path=p, metadata_only=false) -%}
+        <div class="section">
+            <h2>
+                <a href="{{ sub.permalink }}">{{ sub.title }}</a>
+            </h2>
+            <p>{{ sub.description | safe }}</p>
+        </div>
+    {% endfor -%}
+</div>
+{% endblock highlights %} 
+
+{% block content %}
+<div id="content">
+    {{ section.content | safe }}
+</div>
+{% endblock content %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ config.title }} </title>
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="relay.css", trailing_slash=false) }}">
+    </head>
+    
+    <body>
+        <main>
+            {% block nav %}
+            <nav>
+                <h3>{{ config.title }}</h3><!-- 50% Width, No Whitespace --><div id="nav-bar">
+                    <span class="right">
+                        <a href="{{ config.extra.nav1href }}">{{ config.extra.nav1 }}</a> </span>
+                    <span class="right">
+                        <a href="{{ config.extra.nav2href }}">{{ config.extra.nav2 }}</a> </span>
+                    <span class="right">
+                        <a href="{{ config.extra.nav3href }}">{{ config.extra.nav3 }}</a> </span>
+                    <button>Search</span>
+                </div> 
+            </nav>
+            {% endblock nav %}
+            
+            {% block landing %}
+            <div id="landing">
+                <div id="landing-text">
+                    <h1>{{ config.description }}</h1>
+                    <p>{{ config.extra.long_description | safe}}</p> 
+                </div><!-- 50% Width, No Whitespace --><div id="landing-photo">
+                <img src="{{ config.extra.landing_photo_path}}" alt="{{ config.extra.landing_photo_alt}}" style="width: 80%;"/> 
+                </div>
+            </div>
+            {% endblock landing %}
+            
+            {% block highlights %} 
+                <!-- Must be overwritten in child template! -->
+                <!-- Must be overwritten in child template! -->
+            {% endblock highlights %} 
+            
+            {% block content %}
+                <!-- Must be overwritten in child template! -->
+            {% endblock content %} 
+        </main>
+        
+        {% block footer %}
+        <footer>
+            <a href="{{ config.extra.footer_link }}">{{ config.extra.footer_msg }}</a>
+        </footer>
+        {% endblock footer %}
+    </body>
+</html>
