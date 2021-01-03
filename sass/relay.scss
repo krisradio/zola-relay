@@ -1,9 +1,9 @@
 /* Sass Variables               */
 /* Creamsicle Theme             */
-$page-color: #FFD7C1;           /* cream */
+$page-color: #f7f7f7;           /* light gray */
 $header-color: #FF9B61;         /* umbre */
 $landing-border-radius: 0% 0% 10% 10%;
-$section-color: #fff1f3;       /* pink dust */
+$section-color: #f5efd3;       /* pink dust */
 $section-border-radius: 4%;
 $button-color: #ff7500;         /* orange */
 $button-color-mouseover: #ff3400; /* burnt orange */
@@ -15,10 +15,15 @@ $text-spotlight-color: #ffffff;
 body {
   background-color: $page-color;
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 a {
   color: $button-color;
+}
+
+p {
+  text-align: justify;
 }
 
 button {
@@ -31,6 +36,13 @@ button {
 
 button:active {
   background-color: $button-color-mouseover;
+}
+
+table {
+  margin-left: auto; 
+  margin-right: auto;
+  border-spacing: 1em;
+  border-collapse: separate;
 }
 
 /* MAIN                         */
@@ -68,13 +80,17 @@ nav h3 {
   color: $text-spotlight-color;
 }
 
+#nav-bar img {
+  vertical-align: middle;
+}
+
 /* LANDING                      */
 #landing {
   display: inline-flex;
   width: 100%;
   align-items: stretch;
   background-color: $header-color;
-  padding: 2em;
+  padding: 2em 2em 0em 2em;
   box-sizing: border-box;
   border-radius: $landing-border-radius;
 }
@@ -88,20 +104,16 @@ nav h3 {
 }
 
 #landing-photo {
-  position: relative; 
-  width: 0; 
-  height: 0;
   width: 50%; 
-  /*height: 100%;*/
   margin: 0 1em 0 1em;
   text-align: center;
   align-self: center;
 }
 
 #landing-photo img {
-  position: absolute; 
+  position: relative; 
   left: 0;
-  top: -14em;
+  top: -1.5em;
   max-height: 26.25em;
 }
 

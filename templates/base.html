@@ -9,13 +9,13 @@
         <main>
             {% block nav %}
             <nav>
-                <h3>{{ config.title }}</h3><!-- 50% Width, No Whitespace --><div id="nav-bar">
+                <h3><a href="/"><img src="{{ config.extra.home_icon_path }}" alt="Homepage" style="max-height: 2em; vertical-align: sub;"/></a> {{ config.title }}</h3><!-- 50% Width, No Whitespace --><div id="nav-bar">
                     <span class="right">
                         <a href="{{ config.extra.nav1href }}">{{ config.extra.nav1 }}</a> </span>
                     <span class="right">
-                        <a href="{{ config.extra.nav2href }}">{{ config.extra.nav2 }}</a> </span>
+                        <a href="{{ config.extra.nav2href }}" target="_blank">{{ config.extra.nav2 }}</a> </span>
                     <span class="right">
-                        <a href="{{ config.extra.nav3href }}">{{ config.extra.nav3 }}</a> </span>
+                        <a href="{{ config.extra.nav3href }}" target="_blank">{{ config.extra.nav3 }}</a> </span>
                     <button>Search</span>
                 </div> 
             </nav>
@@ -27,13 +27,12 @@
                     <h1>{{ config.description }}</h1>
                     <p>{{ config.extra.long_description | safe}}</p> 
                 </div><!-- 50% Width, No Whitespace --><div id="landing-photo">
-                <img src="{{ config.extra.landing_photo_path}}" alt="{{ config.extra.landing_photo_alt}}" style="width: 80%;"/> 
+                <img src="{{ config.extra.landing_photo_path}}" alt="{{ config.extra.landing_photo_alt}}"/> 
                 </div>
             </div>
             {% endblock landing %}
             
             {% block highlights %} 
-                <!-- Must be overwritten in child template! -->
                 <!-- Must be overwritten in child template! -->
             {% endblock highlights %} 
             
@@ -44,7 +43,8 @@
         
         {% block footer %}
         <footer>
-            <a href="{{ config.extra.footer_link }}">{{ config.extra.footer_msg }}</a>
+            <a href="{{ config.extra.footer_link }}">{{ config.extra.footer_msg}}</a> <br/>
+            {{ config.extra.footer_msg_add }}
         </footer>
         {% endblock footer %}
     </body>
